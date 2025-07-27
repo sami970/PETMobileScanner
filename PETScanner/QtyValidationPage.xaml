@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PETScanner.QtyValidationPage"
+             Title="Validation de la Quantité">
+    
+    
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Label Text="Article ID:" FontSize="24" FontAttributes="Bold" />
+        <Label x:Name="ItemIdLabel" FontSize="20" TextColor="#228B22" />
+
+        <Label Text="Quantité théorique disponible en stock:" FontSize="22" FontAttributes="Bold" />
+        <Label x:Name="TheoreticalQtyLabel" FontSize="20" TextColor="#C07F54" /> 
+
+        <Label Text="Quantité physique disponible en stock:" FontSize="22" FontAttributes="Bold" />
+        <Entry x:Name="PhysicalQtyEntry" FontSize="20" TextColor="#A0522D" Keyboard="Numeric"
+               Completed="OnQtyEntryCompleted" ReturnType="Go" Loaded="QtyEntry_Loaded"/>
+
+        <Button Text="Valider" Clicked="OnValidateClicked" />
+    </VerticalStackLayout>
+</ContentPage>

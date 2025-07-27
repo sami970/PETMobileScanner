@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PETScanner.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+          Padding="30,0"
+          Spacing="25">
+            <Image
+              Source="etacompon.png"
+              HeightRequest="185"
+              Aspect="AspectFit"
+              SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+            
+
+            <Label
+              Text="Menu principale"
+              Style="{StaticResource SubHeadline}"
+              SemanticProperties.HeadingLevel="Level1"
+              SemanticProperties.Description="Menue principale" />
+
+            <Button
+              x:Name="TransferJournalMenue"
+              Text="Journale de transfert"
+              SemanticProperties.Hint="Journal de transfert de stock"
+              Clicked="OnTransferJournalClicked"
+              HorizontalOptions="Fill" />
+            <Button
+               x:Name="AdjustmentJournalMenue"
+               Text="Ajustement du journal" 
+               SemanticProperties.Hint="Inventaire d'ajustement de stock"
+               Clicked="MenueAdjustmentJournalClicked"
+               HorizontalOptions="Fill" />
+
+            <Button
+              x:Name="MenuBtn3"
+              Text="Parametrage" 
+              SemanticProperties.Hint="Parametrage"
+              Clicked="OnSetupClicked"
+              HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿{
+	"ValidatePasswordUrl": "validatePassword/",
+	"OnhandDataUrl": "getIDataForItem/",
+	"CreateJournalUrl": "createNewJournal/",
+	"InsertJournalLineUrl": "insertJournalLine/",
+	"ValidateTransferJournalUrl": "validatePostJournal/",
+	"ValidateAdjustmentJournalUrl": "validatePostJournal/",
+	"TypeJournalType": "",
+	"TypeAjustmentType": "",
+	"EmplacementParDefaut": "",
+	"UrlParDefaut": "",
+	"Port":  ""
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="PETScanner.LocationUpdatePage"
+             Title="Changer l'emplacement">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Article ID:" FontSize="24"  FontAttributes="Bold"/>
+        <Label x:Name="ItemIdLabel" TextColor="#228B22" FontSize="20"/>
+        
+        <Label Text="Le Poid des articles à transférer:" FontSize="22" FontAttributes="Bold"/>
+        <Label x:Name="WeightLabel" FontSize="20" TextColor="#C07F54" />
+
+        <Label Text="Nouvel emplacement :" FontSize="22" FontAttributes="Bold"/>
+        <Entry x:Name="LocationEntry" FontSize="20" TextColor="#A0522D" Placeholder="Saisir le nouvel Emplacement" />
+
+        <Label Text="Nouvelle Quantité :"  FontSize="22" FontAttributes="Bold"/>
+        <Entry x:Name="QtyEntry"  FontSize="20" TextColor="#C07F54" Placeholder="Saisir la nouvelle Quantité" TextChanged="QtyEntry_TextChanged"
+               Completed="OnQtyEntryCompleted" ReturnType="Go" Loaded="QtyEntry_Loaded"  Focused="QtyEntry_Focused"/>
+
+        <Button Text="Valider" Clicked="OnValidateClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

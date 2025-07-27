@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PETScanner"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="PETScanner.TransferJournalPage"
+               Title="Journal de transfert">
+    
+        <ContentPage.BindingContext>
+        <local:OnhandDataViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <StackLayout Orientation="Horizontal" Spacing="5" VerticalOptions="Center">
+            <Label Text="Journale ID:" FontSize="22" VerticalOptions="Center" />
+            <Label x:Name="JournalIdLabel" FontSize="18" TextColor="#014421" VerticalOptions="Center" />
+        </StackLayout>
+
+
+        <Label Text="Article ID:" FontSize="18"  />
+
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="FillAndExpand">
+
+            <Button Text="Valider" Clicked="OnJournalPostClicked" VerticalOptions="Center" 
+                HorizontalOptions="FillAndExpand" BackgroundColor="#228B22"/>
+            <Button Text="Annuller " Clicked="OnCancelTransfertJournalPostClicked" VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+            <Entry x:Name="ItemIdEntry" FontSize="18" TextColor="#228B22" Placeholder="Saisir l’ID de l’article a transférer" HorizontalOptions="FillAndExpand"
+                   Completed="OnItemIdEntryCompleted" ReturnType="Go" Loaded="ItemIdEntry_Loaded"/>
+
+            <Button
+                x:Name="ItemIdCheckButton"
+                Clicked="OnItemIdCheckClicked"
+                WidthRequest="40"
+                HeightRequest="40"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="🔍" />
+                </Button.ImageSource>
+            </Button>
+        </StackLayout>
+
+        
+        
+        <Entry x:Name="FilterEntry" FontSize="9" TextColor="#3CB371"
+       Placeholder="Rechercher par Emplacement, Index, Numéro de série ou Numéro de lot"
+       TextChanged="OnFilterEntryTextChanged"/>
+        
+        <!-- Syncfusion DataGrid -->
+        <syncfusion:SfDataGrid ItemsSource="{Binding ÓnhandDataCollection}" 
+                     x:Name="dataGrid"
+                     ColumnWidthMode="Auto"
+                     GridLinesVisibility="Both"
+                     CellTapped="OnCellTapped"
+                     HeaderGridLinesVisibility="Both"
+                      SelectionMode="Single">
+            <!--SelectionChanged="OnGridSelectionChanged"-->
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn MappingName="ItemIndex" HeaderText=" Index" />
+                <syncfusion:DataGridTextColumn MappingName="InventSerialId" HeaderText="Numéro de série" />
+                <syncfusion:DataGridTextColumn MappingName="LocationId" HeaderText="Emplacement" />
+                <syncfusion:DataGridTextColumn MappingName="QtyPhysical" HeaderText="Quantité" />
+                <syncfusion:DataGridTextColumn MappingName="InventBatchId" HeaderText="Numéro de lot" />
+                <syncfusion:DataGridTextColumn MappingName="ItemName" HeaderText="Nom de l'article"/>
+                <syncfusion:DataGridTextColumn MappingName="ItemId" HeaderText="Numéro de l'article"/>
+                <syncfusion:DataGridTextColumn MappingName="Warehouse" HeaderText="Entrepôt"/>
+                
+                
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+        
+    </VerticalStackLayout>
+
+</ContentPage>
+

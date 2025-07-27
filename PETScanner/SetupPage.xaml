@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PETScanner.SetupPage"
+             Title="Page de paramètres">
+    <ScrollView>
+
+       
+
+        <VerticalStackLayout  Padding="20" Spacing="15">
+            <Label Text="Mobile ID" FontSize="24"
+                   TextColor="#301934" 
+                   HorizontalOptions="Start" />
+            <Entry x:Name="MobileIdEntry" FontSize="20" TextColor="#800020" Placeholder="Saisir le Mobile ID" />
+
+            <Label Text="Mot de Passe" FontSize="24"
+       TextColor="#301934" 
+       HorizontalOptions="Start" />
+            <Entry x:Name="passwordEntry" FontSize="20" TextColor="#800020" Placeholder="Saisir le mot de passe" IsPassword="True" />
+
+            <Button
+            x:Name="ValidPassCheckButton"
+            Clicked="OnValidPassCheckClicked"
+            Text="Valider le mobile et le mot de passe"
+            BackgroundColor="Purple"
+       
+       VerticalOptions="Center">
+
+            </Button>
+
+            <Label Text="Type du journal de transfert " FontSize="22"
+                   TextColor="#301934"
+                   HorizontalOptions="Start"/>
+            <Entry x:Name="TransferJournalTypeEntry" FontSize="18" Placeholder="Enter Transfer Journal Type" Text="{Binding TransferJournalTypeEntry}" />
+
+            <Label Text="Type du journal d'ajustement " FontSize="22"
+                   TextColor="#301934"
+                   HorizontalOptions="Start"/>
+            <Entry x:Name="AdjustmentJournalTypeEntry" FontSize="18" Placeholder="Enter Adjustment Journal Type" Text="{Binding AdjustmentJournalTypeEntry}" />
+
+            <Label Text="Emplacement par defaut" FontSize="22"
+                   TextColor="#301934" 
+                   HorizontalOptions="Start"/>
+            <Entry x:Name="DefaultLocationEntry" FontSize="18" Placeholder="Enter Default Location" Text="{Binding DefaultLocationEntry}" />
+
+            <Label Text="Url par defaut" FontSize="22"
+                    TextColor="#301934" 
+                    HorizontalOptions="Start"/>
+            <Entry x:Name="DefaultUrlEntry" FontSize="18" Placeholder="Enter Default Url"  Text="{Binding DefaultUrlEntry}"/>
+
+            <Label Text="Port par defaut" FontSize="22"
+                    TextColor="#301934" 
+                    HorizontalOptions="Start"/>
+            <Entry x:Name="DefaultPortEntry" FontSize="18" Placeholder="Enter Default Port" Text="{Binding DefaultPortEntry}" />
+
+            <Button Text="Enregistrer" Clicked="OnSaveClicked" Command="{Binding SaveCommand}" />
+            
+
+        </VerticalStackLayout >
+    </ScrollView>
+</ContentPage>
